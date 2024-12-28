@@ -26,30 +26,86 @@ Carry = AB + ACin + BCin
 
 **Figure -1 FULL ADDER**
 
+**Truth Table**
+
+![image](https://github.com/user-attachments/assets/52815c22-b6e7-4c1c-81b7-5ab2b16e6396)
+
 **Full Subtractor**
 
 A full subtractor is a combinational circuit that performs subtraction involving three bits, namely minuend, subtrahend, and borrow-in . It accepts three inputs: minuend, subtrahend and a borrow bit and it produces two outputs: difference and borrow.
 
 ![image](https://github.com/naavaneetha/FULL_ADDER_SUBTRACTOR/assets/154305477/02b24f51-ab51-4304-9ad6-7b81ffc1ead5)
 
-Diff = A ⊕ B ⊕ Bin 
+Diff = A ⊕ B ⊕ Bin
 
 Borrow out = A'Bin + A'B + BBin
 
-**Truthtable**
+**Truth Table**
+
+![image](https://github.com/user-attachments/assets/4af36354-b86a-43ef-9e91-75eb18871645)
 
 **Procedure**
 
-Write the detailed procedure here
+  1. Type the program in Quartus software.
+
+  2. Compile and run the program.
+
+  3. Generate the RTL schematic and save the logic diagram.
+
+  4. Create nodes for inputs and outputs to generate the timing diagram.
+
+  5. For different input combinations generate the timing diagram.
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Designed By: Varun A
+
+Register Number : 24900420
+
+Full Adder
+
+```
+module Lab4Fa (A, B, Cin, sum, car) ;
+input A,B,Cin;
+output sum, car;
+assign sum = A ^ B ^ Cin;
+assign car = ( (A & B) | ( (A ^ B) &Cin) ) ;
+endmodule
+```
+
+Full Subtractor
+
+```
+module Lab4Fs (A, B, Bin, diff, bor) ;
+input A, B, Bin;
+output diff, bor;
+assign diff = A ^ B ^ Bin;
+assign bor = ((~A & B) | (~ (A ^ B) & Bin) ) ;
+endmodule
+```
 
 **RTL Schematic**
 
+Full Adder
+
+![Screenshot (57)](https://github.com/user-attachments/assets/404070cb-586b-4a9f-8689-4af56b974804)
+
+Full Subtractor
+
+![Screenshot (60)](https://github.com/user-attachments/assets/2a666866-8c75-4ab0-9384-f92f44b9caf8)
+
+
 **Output Timing Waveform**
+
+Full Adder
+
+![Screenshot (58)](https://github.com/user-attachments/assets/6d9e7146-410d-45b2-aa9c-2fc345d5feed)
+
+Full Subtractor
+
+![Screenshot (61)](https://github.com/user-attachments/assets/83e45b6b-2f84-432a-a36b-fc718dc0ef25)
+
+
 
 **Result:**
 
